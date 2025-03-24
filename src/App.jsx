@@ -1,7 +1,17 @@
 
 import './App.css'
+import Users from './user'
 import Batsman from './batsmn'
 import Counter from './counter'
+import { Suspense } from 'react';  // ✅ Suspense ইম্পোর্ট করো
+
+const fetchUser = fetch('https://jsonplaceholder.typicode.com/users')
+.then(res => res.json())
+
+
+
+
+
 function App() {
  
  function handleClick(){
@@ -26,13 +36,16 @@ const addHandle7 =(num)=>{
     <>
       
       <h3>Vite + React</h3>
-
+     <Suspense fallback={<h3>loading...</h3>}>
+    <Users fetchUser ={fetchUser}></Users>
+      </Suspense>      
     <Counter></Counter>
 
    <Batsman></Batsman>
 
-
-
+   
+    
+    
 
 
 
