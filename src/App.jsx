@@ -1,6 +1,6 @@
 
 import './App.css'
-
+import Counter from './counter'
 function App() {
  
  function handleClick(){
@@ -25,6 +25,16 @@ const addHandle7 =(num)=>{
     <>
       
       <h3>Vite + React</h3>
+
+    <Counter></Counter>
+
+
+
+
+
+
+
+
 
       <button onClick={handleClick}>click me</button>
 
