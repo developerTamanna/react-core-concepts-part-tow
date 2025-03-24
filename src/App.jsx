@@ -1,5 +1,6 @@
 
 import './App.css'
+import Batsman from './batsmn'
 import Counter from './counter'
 function App() {
  
@@ -28,7 +29,7 @@ const addHandle7 =(num)=>{
 
     <Counter></Counter>
 
-
+   <Batsman></Batsman>
 
 
 
