@@ -1,0 +1,6 @@
+1️⃣ fetchPosts() API থেকে পোস্টের ডাটা আনছে।
+2️⃣ এই ডাটা postPromise হিসেবে Posts.jsx-এ পাঠানো হচ্ছে।
+3️⃣ use(postPromise) Promise resolve করে এবং ডাটা posts-এ সেট করছে।
+4️⃣ এই posts লিস্ট map() এর মাধ্যমে Post কম্পোনেন্টে পাঠানো হচ্ছে।
+5️⃣ যতক্ষণ ডাটা আসছে না, Suspense ফallback UI ("post are coming") দেখাচ্ছে।
+
