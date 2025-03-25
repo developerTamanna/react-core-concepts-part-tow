@@ -1,19 +1,29 @@
 
 import './App.css'
 import Users from './user'
+import Posts from './posts'
 import Batsman from './batsmn'
 import Counter from './counter'
 import { Suspense } from 'react';  // ✅ Suspense ইম্পোর্ট করো
 
-const fetchUser = fetch('https://jsonplaceholder.typicode.com/users')
-.then(res => res.json())
+// const fetchUser = fetch('https://jsonplaceholder.typicode.com/users')
+// .then(res => res.json())
 
 
-
+const fetchPosts = async()=>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  return res.json();
+}
 
 
 function App() {
  
+
+const postPromise = fetchPosts()
+
+
+
+
  function handleClick(){
   alert('i m clicked.')
  }
@@ -36,9 +46,17 @@ const addHandle7 =(num)=>{
     <>
       
       <h3>Vite + React</h3>
-     <Suspense fallback={<h3>loading...</h3>}>
+
+       <Suspense fallback={<h4>post are coming</h4>}>
+            <Posts postPromise={postPromise}></Posts>
+       </Suspense>
+
+
+
+
+     {/* <Suspense fallback={<h3>loading...</h3>}>
     <Users fetchUser ={fetchUser}></Users>
-      </Suspense>      
+      </Suspense>       */}
     <Counter></Counter>
 
    <Batsman></Batsman>
